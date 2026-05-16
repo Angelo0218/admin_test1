@@ -85,6 +85,9 @@ async function onCommand(cmd: string) {
 .user-dropdown__info {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   line-height: 1.2;
   width: 72px;
 }
