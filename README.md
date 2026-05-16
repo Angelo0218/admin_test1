@@ -122,7 +122,7 @@ ThemeToggle 元件切換 `<html>` 的 `dark` class，套用 Element Plus 內建 
 
 ## 環境需求
 
-- Node 20.19+ / 22+
+- Node 22+ (LTS)
 - pnpm 10+
 - Windows / macOS / Linux 皆可
 

@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main, master]
 
+# Opt in to Node 24 runtime for JS actions (Node 20 is deprecated in GitHub Actions
+# and will be removed Sept 2026). https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   verify:
     name: Verify (typecheck / build / mock test)
@@ -13,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -21,9 +26,9 @@ jobs:
           version: 10
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20.19.0'
+          node-version: '22'
           cache: pnpm
 
       - name: Install dependencies

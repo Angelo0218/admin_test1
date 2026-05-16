@@ -234,6 +234,6 @@ vs soybean-admin：
 
 ## 11. 環境
 
-- Node 20.19+
+- Node 22+ (LTS)
 - pnpm 10+
 - Windows 11 開發機（PowerShell）
