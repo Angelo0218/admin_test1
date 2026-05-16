@@ -1,0 +1,12 @@
+@use "element-plus/theme-chalk/src/common/var.scss" as * with (
+  $colors: (
+    'primary': (
+      'base': #409eff
+    )
+  ),
+  $border-radius: (
+    'base': 6px,
+    'small': 4px,
+    'round': 16px
+  )
+);

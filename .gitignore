@@ -1,0 +1,26 @@
+node_modules
+dist
+dist-ssr
+*.local
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.log*
+.env.local
+.env.*.local
+
+# Build artefacts / cache
+coverage
+.cache
+.turbo
+*.tsbuildinfo
+
+# OS
+Thumbs.db
+desktop.ini
+
+# Editor swap files
+*.swp
+*.swo
+*~

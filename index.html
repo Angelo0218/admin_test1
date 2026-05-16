@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem('admin_theme_mode')
+          var mode = raw ? JSON.parse(raw).value : 'light'
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          if (mode === 'dark' || (mode === 'auto' && prefersDark)) {
+            document.documentElement.classList.add('dark')
+          }
+          var langRaw = localStorage.getItem('admin_lang')
+          if (langRaw) {
+            try {
+              document.documentElement.setAttribute('lang', JSON.parse(langRaw).value)
+            } catch (_) {}
+          }
+        } catch (_) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

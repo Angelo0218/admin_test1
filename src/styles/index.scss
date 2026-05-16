@@ -1,0 +1,128 @@
+@use 'element-plus/theme-chalk/src/index.scss' as *;
+@use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
+
+:root {
+  --app-header-height: 52px;
+  --app-sider-width: 210px;
+  --app-sider-width-collapsed: 60px;
+  --app-content-padding: 12px;
+  --app-card-padding: 16px;
+  --app-bg-color: #f5f7fa;
+  --app-sider-bg-color: #001428;
+  --app-sider-text-color: #bfcbd9;
+  --app-sider-active-bg: #1f2d3d;
+  --app-sider-active-text: #ffffff;
+  --app-header-bg: #ffffff;
+  --app-header-border: #e4e7ed;
+}
+
+html.dark {
+  --app-bg-color: #141414;
+  --app-sider-bg-color: #1d1e1f;
+  --app-header-bg: #1d1e1f;
+  --app-header-border: #2b2b2b;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'PingFang TC',
+    'Noto Sans TC',
+    'Microsoft JhengHei',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  color: var(--el-text-color-primary);
+  background-color: var(--app-bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-page {
+  padding: var(--app-content-padding);
+}
+
+.app-card {
+  background-color: var(--el-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  padding: var(--app-card-padding);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gap-8 {
+  gap: 8px;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+/* Keep UI dimensions stable when switching language */
+.el-button:not(.is-circle):not(.is-text):not(.is-link) {
+  min-width: 72px;
+  white-space: nowrap;
+}
+
+.el-button.is-text,
+.el-button.is-link {
+  white-space: nowrap;
+}
+
+.el-form-item__label,
+.el-tag,
+.el-menu-item,
+.el-dropdown-menu__item,
+.el-breadcrumb__item,
+.el-pagination {
+  white-space: nowrap;
+}
+
+.app-card h1,
+.app-card h2,
+.app-card h3,
+.app-card h4 {
+  white-space: nowrap;
+}
