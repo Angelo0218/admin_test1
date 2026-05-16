@@ -42,7 +42,7 @@ export default defineConfig(({ mode }) => {
       preprocessorOptions: {
         scss: {
           additionalData: `@use "@/styles/element-plus.scss" as *;`,
-          silenceDeprecations: ['legacy-js-api', 'mixed-decls']
+          silenceDeprecations: ['legacy-js-api']
         }
       }
     },
