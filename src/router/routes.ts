@@ -41,10 +41,16 @@ export const routes: RouteRecordRaw[] = [
         meta: { title: 'route.list', icon: 'mdi:table' }
       },
       {
-        path: 'admin',
-        name: 'admin',
-        component: () => import('@/views/admin/index.vue'),
-        meta: { title: 'route.admin', icon: 'mdi:shield-account', roles: ['admin'] }
+        path: 'role-mgmt',
+        name: 'role-mgmt',
+        component: () => import('@/views/role-mgmt/index.vue'),
+        meta: { title: 'route.roleMgmt', icon: 'mdi:account-cog', roles: ['admin'] }
+      },
+      {
+        path: 'audit-log',
+        name: 'audit-log',
+        component: () => import('@/views/audit-log/index.vue'),
+        meta: { title: 'route.auditLog', icon: 'mdi:clipboard-text-clock', roles: ['admin'] }
       }
     ]
   },

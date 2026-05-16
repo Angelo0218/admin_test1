@@ -25,7 +25,8 @@ const visibleMenus = computed(() => {
     return [
       { icon: 'mdi:view-dashboard', label: $t('route.dashboard') },
       { icon: 'mdi:table', label: $t('route.list') },
-      { icon: 'mdi:shield-account', label: $t('route.admin') }
+      { icon: 'mdi:account-cog', label: $t('route.roleMgmt') },
+      { icon: 'mdi:clipboard-text-clock', label: $t('route.auditLog') }
     ]
   }
   return [

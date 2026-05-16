@@ -45,4 +45,67 @@ declare namespace Api {
       list: Row[]
     }
   }
+
+  namespace Role {
+    interface Row {
+      id: number
+      code: string
+      name: string
+      description: string
+      userCount: number
+      enabled: boolean
+      builtin: boolean
+      createdAt: string
+    }
+
+    interface ListResponse {
+      total: number
+      list: Row[]
+    }
+
+    interface CreatePayload {
+      code: string
+      name: string
+      description: string
+      enabled: boolean
+    }
+
+    type UpdatePayload = Omit<CreatePayload, 'code'>
+  }
+
+  namespace AuditLog {
+    type Action =
+      | 'login'
+      | 'logout'
+      | 'create_role'
+      | 'update_role'
+      | 'delete_role'
+      | 'view_list'
+      | 'export'
+
+    type Status = 'success' | 'failed'
+
+    interface Row {
+      id: number
+      operator: string
+      operatorRole: App.UserRole
+      action: Action
+      target: string
+      ip: string
+      status: Status
+      durationMs: number
+      createdAt: string
+    }
+
+    interface Detail extends Row {
+      userAgent: string
+      requestPayload: Record<string, unknown> | null
+      responseSnippet: string
+    }
+
+    interface ListResponse {
+      total: number
+      list: Row[]
+    }
+  }
 }

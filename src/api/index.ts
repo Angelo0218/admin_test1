@@ -4,12 +4,14 @@ import adapterFetch from 'alova/fetch'
 import { createAlovaMockAdapter } from '@alova/mock'
 import { authMock } from '@/mock/auth'
 import { listMock } from '@/mock/list'
+import { roleMock } from '@/mock/role'
+import { auditLogMock } from '@/mock/audit-log'
 import { getToken } from '@/utils/auth'
 
 const useMock = import.meta.env.VITE_USE_MOCK === 'true'
 
 const requestAdapter = useMock
-  ? createAlovaMockAdapter([authMock, listMock], {
+  ? createAlovaMockAdapter([authMock, listMock, roleMock, auditLogMock], {
       delay: 250,
       httpAdapter: adapterFetch(),
       mockRequestLogger: import.meta.env.DEV
